@@ -75,9 +75,9 @@ int main(int argc, char** argv) {
     double percent = std::stod(argv[3]);
 
 
-    std::string dir_1 = "/home/koltastic/MIPT/department_selections/1C_2/test/first";
-    std::string dir_2 = "/home/koltastic/MIPT/department_selections/1C_2/test/second";
-    double percent = 0.5;
+//    std::string dir_1 = "/home/koltastic/MIPT/department_selections/1C_2/test/first";
+//    std::string dir_2 = "/home/koltastic/MIPT/department_selections/1C_2/test/second";
+//    double percent = 0.5;
 
 
     std::unordered_set<std::string> filesInFirstDir = GetFiles(dir_1);
@@ -85,7 +85,7 @@ int main(int argc, char** argv) {
 
     std::unordered_set<std::string> usedInFirstDir;
     std::unordered_set<std::string> usedInSecondDir;
-
+    std::system("> tmp.txt");
     for (const auto& first_file: filesInFirstDir) {
         for (const auto& second_file: filesInSecondDir) {
              int result = Compare(first_file, second_file, percent);
@@ -100,6 +100,7 @@ int main(int argc, char** argv) {
              }
         }
     }
+    remove("tmp.txt");
 
     std::cout << "Идентичны: " << '\n';
     for (const auto& [first, second]: identity) {
