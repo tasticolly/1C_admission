@@ -74,12 +74,6 @@ int main(int argc, char** argv) {
     std::string dir_2 = argv[2];
     double percent = std::stod(argv[3]);
 
-
-//    std::string dir_1 = "/home/koltastic/MIPT/department_selections/1C_2/test/first";
-//    std::string dir_2 = "/home/koltastic/MIPT/department_selections/1C_2/test/second";
-//    double percent = 0.5;
-
-
     std::unordered_set<std::string> filesInFirstDir = GetFiles(dir_1);
     std::unordered_set<std::string> filesInSecondDir = GetFiles(dir_2);
 
